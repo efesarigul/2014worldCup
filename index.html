@@ -9,40 +9,137 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;500&display=swap" rel="stylesheet">
     <title>Futbol Projesi</title>
 </head>
 
 <body>
-<header class="py-3 mb-3 border-bottom" style="background-color: rgb(158, 211, 174);">
-    <div class="container-fluid d-flex gap-3 align-items-center" style="justify-content: space-between; background-color: rgb(233, 233, 77);">
-        <div class="logo">
-            <img src="https://energy.danube-region.eu/wp-content/uploads/sites/6/sites/6/2019/09/the-2014-fifa-world-cup-in-brasil-12-june-13-july-2014_120_1.jpg" style="width: 150px;">
+    <header class="py-3 mb-3 border-bottom" style="background-color: rgb(158, 211, 174);">
+        <div class="container-fluid d-flex gap-3 align-items-center"
+            style="justify-content: space-between; background-color: rgb(233, 233, 77);">
+            <div class="col-4">
+                <div class="logo">
+                </div>
+                <div class="col-8">
+                    <img src="https://energy.danube-region.eu/wp-content/uploads/sites/6/sites/6/2019/09/the-2014-fifa-world-cup-in-brasil-12-june-13-july-2014_120_1.jpg"
+                        style="width: 150px; cursor: pointer;">
+                </div>
+            </div>
+            <div class="dropdown d-flex" style="justify-content: space-between;">
+                <div class="input-group" style="width: 500px;">
+                  
+                    <input type="text" class="form-control" id="name-input"
+                        aria-label="Text input with segmented dropdown button" placeholder="Takım giriniz">
+                    
+                
+                <button type="button" class="btn btn-outline-secondary" style="background-position: center;"
+                        id="team-button">
+                    </button>
+
+                </div>
+    </header>
+    <div class="container-group">
+        <div class="table-responsive">
+            <select class="form-select form-select-sm " aria-label=".form-select-sm example" id="dropdown-menu">
+                <option value="" id="select-group" selected>Select Group</option>
+                <option value="Group A" class="group-item">Group A</option>
+                <option value="Group B" class="group-item">Group B</option>
+                <option value="Group C" class="group-item">Group C</option>
+                <option value="Group D" class="group-item">Group D</option>
+                <option value="Group E" class="group-item">Group E</option>
+                <option value="Group F" class="group-item">Group F</option>
+                <option value="Group G" class="group-item">Group G</option>
+                <option value="Group H" class="group-item">Group H</option>
+            </select>
+            <div class="table-group" id="table-group">
+                <!-- <div class="group-container">
+                    <h1 id="group-name">Group</h1>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Takım</th>
+                                <th scope="col">Galibiyet</th>
+                                <th scope="col">Beraberlik</th>
+                                <th scope="col">Mağlubiyet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="team">Mark</td>
+                                <td class="won">Otto</td>
+                                <td class="drawn">@mdo</td>
+                                <td class="lost">@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td class="team">Jacob</td>
+                                <td class="won">Thornton</td>
+                                <td class="drawn">@fat</td>
+                                <td class="lost">@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td class="team">Larry the Bird</td>
+                                <td class="won">@twitter</td>
+                                <td class="drawn">@twitter</td>
+                                <td class="lost">@twitter</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td class="team">elma</td>
+                                <td class="won">sad</td>
+                                <td class="drawn">sad</td>
+                                <td class="lost">sad</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+            </div>
         </div>
-        <div class="dropdown d-flex" style="justify-content: space-between;">
-            <div class="input-group" style="width: 500px;">
-                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" placeholder="Takım giriniz">
-                <button type="button" class="btn btn-outline-secondary"> <img src="trophy.png" style="width: 35px; color: #fff;">
-                  <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
     </div>
-</header>
+    <div id="container-match">
+        <h3 class="page-heading mb-3">Maçlar</h3>
+        <button id="clear-last-users" class="btn btn-success">Maçları temizle</button>
+    </div>
+   
+    
+
+</div>
+
+        <div id="matchSearch" style="margin-bottom: 100px;">
+            <!-- <div class="border">
+            <div class="container-text-center d-flex" style="justify-content: space-around;" id="last-matches">
+                <div class="row" id="macths-goal" style="width: 400px;">
+                    <div class="col-md-4">Team1</div>
+                    <div class="col-md-4">Score</div>
+                    <div class="col-md-4">Team2</div>
+                </div>
+                
+            </div>
+            <div class="goals" style="display: flex; width: 400px;">
+            <div class="col-md-6">
+                <ul style="padding-left: 0;">
+                <li><i class="fa-regular fa-futbol" style="padding: 5px;"></i>goals1</li>
+            </ul>
+        </div>
+        <div class="col-md-6">  
+        <ul>
+                <li><i class="fa-regular fa-futbol" style="padding: 5px;"></i>goals2</li>
+            </ul>
+        </div>
+    </div>  -->
+        
+    </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="ui.js"></script>
     <script src="request.js"></script>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
